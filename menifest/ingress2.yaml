@@ -21,7 +21,8 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-    - http:
+    - host: nggc.store
+      http:
         paths:
           - path: /
             pathType: Prefix
