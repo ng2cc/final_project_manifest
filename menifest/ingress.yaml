@@ -16,11 +16,12 @@ metadata:
     # alb.ingress.kubernetes.io/cors-allow-headers: "origin, content-type, accept"
     # alb.ingress.kubernetes.io/cors-max-age: "3600"
   labels:
-    app: web  
+    app: web
 
 spec:
   ingressClassName: alb
   rules:
+    - host: myapp-alb-227780076.ap-northeast-1.elb.amazonaws.com
     - http:
         paths:
           - path: /

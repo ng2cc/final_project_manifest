@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: ghcr.io/ng2cc/nginx-container-registry-cloud:latest
+          image: ghcr.io/jaehyuk-lee/nginx-container-registry-cloud:release
           ports:
             - containerPort: 80
           resources:
