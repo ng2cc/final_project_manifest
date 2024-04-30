@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp-nginx 
+  name: myapp-nginx
 spec:
   selector:
     matchLabels:
@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: ghcr.io/jaehyuk-lee/nginx-container-registry:release
+          image: ghcr.io/jaehyuk-lee/nginx-container-registry-cloud:release
           ports:
             - containerPort: 80
           resources:
