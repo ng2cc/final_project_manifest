@@ -7,9 +7,9 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/swordbillz/kube_manifest-4thWeekOfCloudOps.git
+    repoURL: https://github.com/ng2cc/final_project_manifest.git
     targetRevision: HEAD
-    path: menifest
+    path: cloudwatch-insight
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
