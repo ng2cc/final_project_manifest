@@ -16,7 +16,7 @@ spec:
           image: ghcr.io/jaehyuk-lee/nginx-container-registry-cloud:release
           env:
           - name: WAS_IP
-            value: "myapp-alb-227780076.ap-northeast-1.elb.amazonaws.com"
+            value: myapp-ingress.myapp.svc.cluster.local
           ports:
             - containerPort: 80
           resources:
