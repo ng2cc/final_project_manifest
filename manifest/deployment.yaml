@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: ghcr.io/jaehyuk-lee/nginx-container-registry:release
+          image: swordbill/nginx:v9.0
           ports:
             - containerPort: 80
           resources:
@@ -39,7 +39,7 @@ spec:
     spec:
       containers:
         - name: nodejs
-          image: ghcr.io/jaehyuk-lee/nodejs-container-registry:release
+          image: swordbill/nodejs:v4.3
           ports:
             - containerPort: 3000
           resources:
