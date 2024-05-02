@@ -40,3 +40,7 @@ spec:
           #       name: nodejs-service
           #       port:
           #         number: 3000
+  tls:
+  - hosts:
+    - web.qpt045.shop
+    secretName: myapp-tls-secret
