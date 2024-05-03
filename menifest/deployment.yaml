@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-nginx
+  name: myapp-nginx
 spec:
   selector:
     matchLabels:
@@ -30,7 +30,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: WAS-nodejs
+  name: myapp-nodejs
 spec:
   selector:
     matchLabels:
@@ -56,25 +56,25 @@ spec:
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: web-nginx-autoscaler
+  name: myapp-nginx-autoscaler
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: web-nginx
+    name: myapp-nginx
   minReplicas: 2
   maxReplicas: 10
-  targetCPUUtilizationPercentage: 40
+  targetCPUUtilizationPercentage: 30
 ---
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: WAS-nodejs-autoscaler
+  name: myapp-nodejs-autoscaler
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: WAS-nodejs
+    name: myapp-nodejs
   minReplicas: 2
   maxReplicas: 10
-  targetCPUUtilizationPercentage: 40
+  targetCPUUtilizationPercentage: 30

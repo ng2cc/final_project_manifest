@@ -1,12 +1,12 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  namespace: web
-  name: web-ingress
+  namespace: myapp
+  name: myapp-ingress
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/load-balancer-name: web-alb
+    alb.ingress.kubernetes.io/load-balancer-name: myapp-alb
     # alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-1:637423369403:certificate/2200f535-e90b-4002-868f-4f560ebc9e1e
     # alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     # alb.ingress.kubernetes.io/ssl-redirect: '443'
@@ -40,4 +40,4 @@ spec:
   tls:
   - hosts:
     - web.qpt045.shop
-    secretName: web-tls-secret
+    secretName: myapp-tls-secret
