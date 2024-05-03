@@ -64,7 +64,7 @@ spec:
     name: myapp-nginx
   minReplicas: 2
   maxReplicas: 10
-  targetCPUUtilizationPercentage: 30
+  targetCPUUtilizationPercentage: 60
 ---
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
@@ -77,4 +77,4 @@ spec:
     name: myapp-nodejs
   minReplicas: 2
   maxReplicas: 10
-  targetCPUUtilizationPercentage: 30
+  targetCPUUtilizationPercentage: 60
