@@ -43,9 +43,6 @@ spec:
       containers:
         - name: nodejs
           image: ghcr.io/jaehyuk-lee/nodejs-test:release
-          env:
-          - name: DB_IP
-            value: wbdb.c1wcssiiki5n.ap-northeast-1.rds.amazonaws.com
           ports:
             - containerPort: 3000
           resources:
