@@ -21,10 +21,10 @@ spec:
             - containerPort: 80
           resources:
             requests:
-              cpu: "200m"
+              cpu: "500m"
               memory: "256Mi"
             limits:
-              cpu: "400m"
+              cpu: "1000m"
               memory: "512Mi"
 ---
 apiVersion: apps/v1
@@ -47,11 +47,11 @@ spec:
             - containerPort: 3000
           resources:
             requests:
-              cpu: "400m"
-              memory: "512Mi"
+              cpu: "500m"
+              memory: "256Mi"
             limits:
-              cpu: "800m"
-              memory: "1G"
+              cpu: "1000m"
+              memory: "512Mi"
 ---
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
