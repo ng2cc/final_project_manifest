@@ -13,19 +13,19 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: ghcr.io/ng2cc/nginx-container-registry:release
+          image: ghcr.io/ng2cc/nginx_ttest:release
           env:
           - name: WAS_IP
-            value: nodejs-alb-589175880.ap-northeast-1.elb.amazonaws.com
+            value: nodejs-alb-456367258.ap-northeast-1.elb.amazonaws.com
           ports:
             - containerPort: 80
           resources:
             requests:
-              cpu: "500m"
-              memory: "256Mi"
+              cpu: "100m"
+              memory: "128Mi"
             limits:
-              cpu: "1000m"
-              memory: "512Mi"
+              cpu: "200m"
+              memory: "256Mi"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -42,15 +42,15 @@ spec:
     spec:
       containers:
         - name: nodejs
-          image: ghcr.io/ng2cc/nodejs-container-registry:release
+          image: ghcr.io/jaehyuk-lee/nodejs-test:release
           ports:
             - containerPort: 3000
           resources:
             requests:
-              cpu: "500m"
+              cpu: "200m"
               memory: "256Mi"
             limits:
-              cpu: "1000m"
+              cpu: "400m"
               memory: "512Mi"
 ---
 apiVersion: autoscaling/v1
