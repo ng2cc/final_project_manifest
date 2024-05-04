@@ -13,10 +13,10 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: ghcr.io/ng2cc/nginx_ttest:release
+          image: ghcr.io/ng2cc/nginx-container-registry:release
           env:
           - name: WAS_IP
-            value: nodejs-alb-456367258.ap-northeast-1.elb.amazonaws.com
+            value: nodejs-alb-589175880.ap-northeast-1.elb.amazonaws.com
           ports:
             - containerPort: 80
           resources:
@@ -42,7 +42,7 @@ spec:
     spec:
       containers:
         - name: nodejs
-          image: ghcr.io/jaehyuk-lee/nodejs-test:release
+          image: ghcr.io/ng2cc/nodejs-container-registry:release
           ports:
             - containerPort: 3000
           resources:
