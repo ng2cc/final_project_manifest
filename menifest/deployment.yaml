@@ -21,11 +21,11 @@ spec:
             - containerPort: 80
           resources:
             requests:
-              cpu: "200m"
-              memory: "256Mi"
-            limits:
               cpu: "400m"
               memory: "256Mi"
+            limits:
+              cpu: "800m"
+              memory: "512Mi"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -47,10 +47,10 @@ spec:
             - containerPort: 3000
           resources:
             requests:
-              cpu: "200m"
+              cpu: "400m"
               memory: "256Mi"
             limits:
-              cpu: "400m"
+              cpu: "800m"
               memory: "512Mi"
 ---
 apiVersion: autoscaling/v1
@@ -64,7 +64,7 @@ spec:
     name: myapp-nginx
   minReplicas: 2
   maxReplicas: 10
-  targetCPUUtilizationPercentage: 60
+  targetCPUUtilizationPercentage: 30
 ---
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
@@ -77,4 +77,4 @@ spec:
     name: myapp-nodejs
   minReplicas: 2
   maxReplicas: 10
-  targetCPUUtilizationPercentage: 60
+  targetCPUUtilizationPercentage: 30
